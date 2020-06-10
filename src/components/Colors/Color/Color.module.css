@@ -1,0 +1,12 @@
+.swatch{
+    width: 250px;
+    display: inline-block;
+    text-align: left;
+    margin: 8px;
+}
+
+.color {
+    width: 100%;
+    background: salmon;
+    height: 80px;
+}
