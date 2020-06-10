@@ -1,4 +1,4 @@
-.swatch{
+.swatch {
     width: 250px;
     display: inline-block;
     text-align: left;
@@ -9,4 +9,17 @@
     width: 100%;
     background: salmon;
     height: 80px;
+}
+
+.popover {
+    position: absolute;
+    z-index: 10;
+}
+
+.cover {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px
 }

@@ -7,7 +7,12 @@ const Colors = props => {
     }
     return <div style={style}>
         {props.colors.map((color, index) => {
-            return <Color color={color} key={index} />
+            return <Color color={color}
+                key={index}
+                index  = {index}
+                click={props.click}
+                change={props.change}
+            />
         })}
     </div>
 }
