@@ -39,20 +39,13 @@ class App extends React.Component {
             b: '19',
             a: '1',
           }
-        }, {
-          showPicker: false,
-          color: {
-            r: '241',
-            g: '112',
-            b: '19',
-            a: '1',
-          }
         }
 
       ]
     };
   }
   render() {
+
     return (
       <div>
         <Colors colors={this.state.colors}

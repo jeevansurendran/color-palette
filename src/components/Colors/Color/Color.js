@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { SketchPicker } from "react-color";
 import styles from "./Color.module.css";
+import withSwatch from '../../../hoc/withSwatch'
 
 class Color extends Component {
     render() {
@@ -64,4 +65,4 @@ const formatRbgToCmyk = (color) => {
     return `CMYK ${c} / ${m} / ${y} / ${k}`;
 };
 
-export default Color;
+export default withSwatch(Color);
