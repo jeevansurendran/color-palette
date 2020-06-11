@@ -33,15 +33,9 @@ class Color extends Component {
     }
 }
 
-const componentToHex = (c) => {
-    var hex = c.toString(16);
-    return hex.length === 1 ? "0" + hex : hex;
-};
 
 const formatRgbToHex = (color) => {
-    return `HEX #${componentToHex(color.r)}${componentToHex(
-        color.g
-    )}${componentToHex(color.b)}`.toUpperCase();
+  return "HEX #" + ((1 << 24) + (color.r << 16) + (color.g << 8) + color.b).toString(16).slice(1).toUpperCase();
 };
 
 const formatRgb = (color) => {

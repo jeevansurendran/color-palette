@@ -10,38 +10,45 @@ class App extends React.Component {
         {
           showPicker: false,
           color: {
-            r: '200',
-            g: '222',
-            b: '0',
-            a: '1',
+            r: 200,
+            g: 222,
+            b: 0,
+            a: 1,
           }
         }, {
           showPicker: false,
           color: {
-            r: '241',
-            g: '112',
-            b: '19',
-            a: '1',
+            r: 241,
+            g: 112,
+            b: 19,
+            a: 1,
           }
         }, {
           showPicker: false,
           color: {
-            r: '241',
-            g: '112',
-            b: '19',
-            a: '1',
+            r: 241,
+            g: 112,
+            b: 19,
+            a: 1,
           }
         }, {
           showPicker: false,
           color: {
-            r: '241',
-            g: '112',
-            b: '19',
-            a: '1',
+            r: 241,
+            g: 112,
+            b: 19,
+            a: 1,
           }
         }
-
-      ]
+      ],
+      add : {
+        showPicker:false,
+        color: {
+          r: 241,
+          g: 112,
+          b: 19
+        }
+      }
     };
   }
   render() {
@@ -49,8 +56,13 @@ class App extends React.Component {
     return (
       <div>
         <Colors colors={this.state.colors}
-          click={this.handleClick}
-          change={this.handleChange} />
+          add ={this.state.add}
+          addClick={this.addClick}
+          addClose = {this.addClose}
+          addCancel = {this.addCancel}
+          addChange={this.addChange}
+          colorClick={this.handleClick}
+          colorChange={this.handleChange} />
       </div>
     )
   }
@@ -69,6 +81,34 @@ class App extends React.Component {
     newState.colors[index].color = color.rgb
     this.setState(newState)
   };
+  
+  addClick = () => {
+    const newState  ={...this.state}
+    newState.colors.forEach(ele => {
+      ele.showPicker = false
+    })
+    newState.add.showPicker = true
+    this.setState(newState)
+  }
+  addChange =(color) => {
+    const newState = {...this.state}
+    newState.add.color = color
+    this.setState(newState)
+  }
 
+  addClose = () => {
+    console.log('close')
+    const newState = {...this.state}
+    newState.add.showPicker = false
+    console.log(newState)
+    newState.colors.push({showPicker:false, color: newState.add.color.rgb})
+    this.setState(newState)
+  }
+  addCancel =() => {
+    console.log('cancel')
+    const newState = {...this.state}
+    newState.add.showPicker = false
+    this.setState(newState)
+  }
 }
 export default App;
