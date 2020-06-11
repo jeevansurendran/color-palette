@@ -1,0 +1,25 @@
+.swatch {
+    width: 250px;
+    display: inline-block;
+    text-align: left;
+    margin: 8px;
+}
+
+.swatch > p {
+    color: white
+}   
+
+.color {
+    width: 100%;
+    background: #F1F1F4;
+    height: 80px;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.plus {
+    color: black;
+    text-align: center;
+    font-size: 30px;
+    flex: 0 0 120px;
+}
