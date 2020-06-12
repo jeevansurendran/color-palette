@@ -7,43 +7,10 @@ class Colors extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            colors: [
-                {
-                    showPicker: false,
-                    color: {
-                        r: 200,
-                        g: 222,
-                        b: 0,
-                        a: 1,
-                    }
-                }, {
-                    showPicker: false,
-                    color: {
-                        r: 241,
-                        g: 112,
-                        b: 19,
-                        a: 1,
-                    }
-                }, {
-                    showPicker: false,
-                    color: {
-                        r: 241,
-                        g: 112,
-                        b: 19,
-                        a: 1,
-                    }
-                }, {
-                    showPicker: false,
-                    color: {
-                        r: 241,
-                        g: 112,
-                        b: 19,
-                        a: 1,
-                    }
-                }
-            ],
+            colors: [],
             add: {
                 showPicker: false,
+                name: 'New Color',
                 color: {
                     r: 241,
                     g: 112,
@@ -52,15 +19,20 @@ class Colors extends Component {
             }
         };
     }
+
+    LOCAL_STORAGE_KEY = 'colors'
+
     render() {
         var style = {
             textAlign: "center"
         }
+
         const colors = this.state.colors.map((color, index) => {
             return <Color
                 color={color}
                 key={index}
                 index={index}
+                nameChange={this.handleNameChange}
                 click={this.handleClick}
                 change={this.handleChange}
                 close={this.handleClose}
@@ -79,6 +51,11 @@ class Colors extends Component {
         return <div style={style}>
             {colors}
         </div>
+    }
+
+    componentDidMount = () => {
+        console.log('mount')
+        localStorage.getItem(this.LOCAL_STORAGE_KEY) && this.setState({colors: JSON.parse(localStorage.getItem('colors'))})
     }
 
     handleClick = (index) => {
@@ -105,6 +82,7 @@ class Colors extends Component {
     handleDelete = (index) => {
         const newState = { ...this.state }
         newState.colors.splice(index, 1)
+        this.saveColors(newState)
         this.setState(newState)
     }
 
@@ -126,8 +104,8 @@ class Colors extends Component {
         console.log('close')
         const newState = { ...this.state }
         newState.add.showPicker = false
-        console.log(newState)
         newState.colors.push({ showPicker: false, color: newState.add.color.rgb })
+        this.saveColors(newState)
         this.setState(newState)
     }
     addCancel = () => {
@@ -135,6 +113,16 @@ class Colors extends Component {
         const newState = { ...this.state }
         newState.add.showPicker = false
         this.setState(newState)
+    }
+    handleNameChange = (index, e) => {
+        const newState = { ...this.state }
+        newState.colors[index].name = e.target.value
+        this.saveColors(newState)
+        this.setState(newState)
+    }
+
+    saveColors = (newState) => {
+        localStorage.setItem(this.LOCAL_STORAGE_KEY, JSON.stringify(newState.colors))
     }
 }
 

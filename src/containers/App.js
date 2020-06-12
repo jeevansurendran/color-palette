@@ -5,7 +5,7 @@ import Colors from '../components/Colors/Colors';
 const App  = props => {
     return (
       <div>
-        <p>Color Palette</p>
+        <p>Colors</p>
         <Colors />
       </div>
     )

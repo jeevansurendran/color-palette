@@ -28,7 +28,8 @@ class Color extends Component {
         return (
             <div className={styles.swatch} >
                 <div>
-                    <p> Background </p>
+                    <input className={styles.name} value={this.props.color.name}
+                    onChange={(e)=>this.props.nameChange(this.props.index, e)}/>
                     <div style={style} className={styles.color} onMouseOver={this.showOverlay} onMouseLeave={this.hideOverlay}>
                         {this.state.isShowingOverlay ? (<div className={styles.overlay}>
                             <button onClick={this.props.click.bind(this, this.props.index)}>edit</button>

@@ -5,6 +5,10 @@
   margin: 8px;
 }
 
+.swatch  p {
+    font-size: small;
+}
+
 .color {
   width: 100%;
   position: relative;
@@ -44,4 +48,15 @@
     border:1px solid white;
     color: white;
     font-size: 14px;
+}
+
+.name {
+    border: none;
+    font-size: large;
+    margin-bottom: 4px;
+    border-bottom : 2px solid grey;
+}
+
+.name:focus {
+    outline:none;
 }
