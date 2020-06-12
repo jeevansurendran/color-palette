@@ -1,6 +1,7 @@
-This react project helps you store colors locally all the time. it uses local storage 
+## Color - palette
+This react project helps you store colors locally all the time. it uses local storage. This project uses [react-color](https://casesandberg.github.io/react-color/) to help with color picking and uses css modules to style the components.
 
-## Question Statment
+### Question Statment
 
 ### Task
 A color palette that allows users to select colors.
