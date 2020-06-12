@@ -31,9 +31,8 @@ class Color extends Component {
                     <p> Background </p>
                     <div style={style} className={styles.color} onMouseOver={this.showOverlay} onMouseLeave={this.hideOverlay}>
                         {this.state.isShowingOverlay ? (<div className={styles.overlay}>
-                            
-                            <p onClick={this.props.click.bind(this, this.props.index)}>edit</p>
-                            <p onClick={this.props.delete.bind(this, this.props.index)}>delete</p>                            
+                            <button onClick={this.props.click.bind(this, this.props.index)}>edit</button>
+                            <button onClick={this.props.delete.bind(this, this.props.index)}>delete</button>                            
                             </div>) : null}
                     </div>
                     <p> {formatRgbToHex(this.props.color.color)} </p>

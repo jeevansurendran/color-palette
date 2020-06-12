@@ -6,14 +6,14 @@ class Add extends Component {
     render() {
         return (
             <div className={styles.swatch}>
-                <div className={styles.color} onClick={this.props.addClick} >
+                <div className={styles.color} onClick={this.props.click} >
                     <p className={styles.plus}>+</p>
                 </div>
                 {this.props.add.showPicker ? <div className={styles.popover}>
                 <PhotoshopPicker color={this.props.add.color}
-                        onAccept={this.props.addClose}
-                        onCancel={this.props.addCancel}
-                        onChange={this.props.addChange} />
+                        onAccept={this.props.close}
+                        onCancel={this.props.cancel}
+                        onChange={this.props.change} />
                 </div> : null}
                 <p>.</p>
                 <p>.</p>

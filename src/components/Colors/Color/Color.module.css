@@ -36,8 +36,10 @@
   justify-content: center;
   align-items: center;
 }
-.overlay > p {
+.overlay > button {
     border-radius: 4px;
+    margin: 0px 2px 0px 2px;
+    background-color: Transparent;
     padding: 2px 10px 2px 10px;
     border:1px solid white;
     color: white;
