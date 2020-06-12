@@ -1,25 +1,45 @@
 .swatch {
-    width: 250px;
-    display: inline-block;
-    text-align: left;
-    margin: 8px;
+  width: 250px;
+  display: inline-block;
+  text-align: left;
+  margin: 8px;
 }
 
 .color {
-    width: 100%;
-    background: salmon;
-    height: 80px;
+  width: 100%;
+  position: relative;
+  background: salmon;
+  height: 80px;
 }
 
 .popover {
-    position: absolute;
-    z-index: 10;
+  position: absolute;
+  z-index: 2;
 }
 
 .cover {
-    position: fixed;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+
+.overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  background: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.overlay > p {
+    border-radius: 4px;
+    padding: 2px 10px 2px 10px;
+    border:1px solid white;
+    color: white;
+    font-size: 14px;
 }

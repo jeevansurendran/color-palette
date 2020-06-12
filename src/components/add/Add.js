@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import styles from "./Add.module.css"
 import { PhotoshopPicker } from 'react-color'
-import withSwatch from '../../hoc/withSwatch'
 
 class Add extends Component {
     render() {
@@ -23,4 +22,4 @@ class Add extends Component {
         );
     }
 }
-export default withSwatch(Add);
+export default Add;

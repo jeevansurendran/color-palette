@@ -55,14 +55,17 @@ class App extends React.Component {
 
     return (
       <div>
-        <Colors colors={this.state.colors}
+        <Colors 
+          colors={this.state.colors}
           add ={this.state.add}
           addClick={this.addClick}
           addClose = {this.addClose}
           addCancel = {this.addCancel}
           addChange={this.addChange}
           colorClick={this.handleClick}
-          colorChange={this.handleChange} />
+          colorChange={this.handleChange}
+          colorClose = {this.handleClose} 
+          colorDelete = {this.handleDelete}/>
       </div>
     )
   }
@@ -81,6 +84,18 @@ class App extends React.Component {
     newState.colors[index].color = color.rgb
     this.setState(newState)
   };
+
+  handleClose = (index)=> {
+    const newState ={...this.state}
+    newState.colors[index].showPicker = false
+    this.setState(newState)
+  }
+
+  handleDelete = (index) => {
+    const newState = {...this.state}
+    newState.colors.splice(index, 1)
+    this.setState(newState)
+  }
   
   addClick = () => {
     const newState  ={...this.state}

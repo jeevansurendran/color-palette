@@ -1,25 +1,48 @@
 import React, { Component } from "react";
 import { SketchPicker } from "react-color";
 import styles from "./Color.module.css";
-import withSwatch from '../../../hoc/withSwatch'
 
 class Color extends Component {
+
+    constructor(props) {
+        super(props)
+        this.state = {
+            isShowingOverlay: false
+        }
+    }
+
+    showOverlay = () => {
+        this.setState({ isShowingOverlay: true })
+    }
+
+    hideOverlay = () => {
+        this.setState({ isShowingOverlay: false })
+    }
+
+
     render() {
         const style = {
             background: `rgba(${this.props.color.color.r}, ${this.props.color.color.g}
                 , ${this.props.color.color.b}, ${this.props.color.color.a})`,
         };
         return (
-            <div className={styles.swatch}>
-                <div onClick={this.props.click.bind(this, this.props.index)}>
+            <div className={styles.swatch} >
+                <div>
                     <p> Background </p>
-                    <div style={style} className={styles.color} />
+                    <div style={style} className={styles.color} onMouseOver={this.showOverlay} onMouseLeave={this.hideOverlay}>
+                        {this.state.isShowingOverlay ? (<div className={styles.overlay}>
+                            
+                            <p onClick={this.props.click.bind(this, this.props.index)}>edit</p>
+                            <p onClick={this.props.delete.bind(this, this.props.index)}>delete</p>                            
+                            </div>) : null}
+                    </div>
                     <p> {formatRgbToHex(this.props.color.color)} </p>
                     <p> {formatRgb(this.props.color.color)} </p>
                     <p> {formatRbgToCmyk(this.props.color.color)} </p>
                 </div>
                 {this.props.color.showPicker ? (
                     <div className={styles.popover}>
+                        <div className={styles.cover} onClick={this.props.close.bind(this, this.props.index)} />
                         <SketchPicker
                             color={this.props.color.color}
                             onChange={(color) =>
@@ -28,14 +51,16 @@ class Color extends Component {
                         />
                     </div>
                 ) : null}
+
             </div>
         );
     }
 }
 
 
+
 const formatRgbToHex = (color) => {
-  return "HEX #" + ((1 << 24) + (color.r << 16) + (color.g << 8) + color.b).toString(16).slice(1).toUpperCase();
+    return "HEX #" + ((1 << 24) + (color.r << 16) + (color.g << 8) + color.b).toString(16).slice(1).toUpperCase();
 };
 
 const formatRgb = (color) => {
@@ -59,4 +84,4 @@ const formatRbgToCmyk = (color) => {
     return `CMYK ${c} / ${m} / ${y} / ${k}`;
 };
 
-export default withSwatch(Color);
+export default Color;

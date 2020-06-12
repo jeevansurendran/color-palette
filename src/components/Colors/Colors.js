@@ -6,13 +6,14 @@ const Colors = props => {
     var style = {
         textAlign: "center"
     }
-    console.log(props)
     const colors = props.colors.map((color, index) => {
         return <Color color={color}
             key={index}
             index={index}
             click={props.colorClick}
             change={props.colorChange}
+            close= {props.colorClose}
+            delete ={props.colorDelete}
         />
     })
     colors.push(<Add
