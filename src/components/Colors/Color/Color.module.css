@@ -1,0 +1,62 @@
+.swatch {
+  width: 250px;
+  display: inline-block;
+  text-align: left;
+  margin: 8px;
+}
+
+.swatch  p {
+    font-size: small;
+}
+
+.color {
+  width: 100%;
+  position: relative;
+  background: salmon;
+  height: 80px;
+}
+
+.popover {
+  position: absolute;
+  z-index: 2;
+}
+
+.cover {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+
+.overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  background: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.overlay > button {
+    border-radius: 4px;
+    margin: 0px 2px 0px 2px;
+    background-color: Transparent;
+    padding: 2px 10px 2px 10px;
+    border:1px solid white;
+    color: white;
+    font-size: 14px;
+}
+
+.name {
+    border: none;
+    font-size: large;
+    margin-bottom: 4px;
+    border-bottom : 2px solid grey;
+}
+
+.name:focus {
+    outline:none;
+}

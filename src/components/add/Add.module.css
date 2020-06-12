@@ -1,0 +1,47 @@
+.swatch {
+    width: 250px;
+    display: inline-block;
+    text-align: left;
+    margin: 8px;
+}
+
+.swatch > p {
+    font-size: small;
+    color: white
+}   
+
+.color {
+    width: 100%;
+    background: #F1F1F4;
+    height: 80px;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.plus {
+    color: black;
+    text-align: center;
+    font-size: 30px;
+    flex: 0 0 120px;
+}
+
+.popover {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left : 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cover {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px
+}
