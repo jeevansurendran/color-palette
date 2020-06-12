@@ -109,7 +109,7 @@ class Colors extends Component {
         console.log('close')
         const newState = { ...this.state }
         newState.add.showPicker = false
-        newState.colors.push({ showPicker: false,name : 'new color', color: newState.add.color.rgb })
+        newState.colors.push({ showPicker: false,name : this.state.add.name, color: newState.add.color.rgb })
         this.setState(newState)
     }
     addCancel = () => {
