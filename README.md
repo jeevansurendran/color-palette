@@ -1,68 +1,28 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This react project helps you store colors locally all the time. it uses local storage 
 
-## Available Scripts
+## Question Statment
 
-In the project directory, you can run:
+### Task
+A color palette that allows users to select colors.
 
-### `npm start`
+### Basics
+The application should be a single page app with no need for navigation or routing.  On clicking the add (+) button, the user should be presented with a color picker interface to add color to a palette.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The color must be shown as a plain box with the Hex code, RGB and CMYK representations displayed below the box, as shown in the following mockup. Each color must have a label that can be edited by clicking on it. Each color box should display edit and delete controls upon mouse hover. The edit control will re-open the color picker interface while the delete control will remove the color from the palette.  
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Whenever a new color is added to the palette or a change is made to one of the existing colors, the data needs to be stored in the browser’s local storage, and must persist on refreshing the page.
 
-### `npm test`
+### Checkpoints for reference
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1.	Clicking on add button opens color picker
+2.	Selecting a color in picker adds it to palette
+3.	Color information displayed
+4.	Edit and Delete controls on hover
+5.	Edit and delete works as specified
+6.	Color data persist locally
+7.	(Optional) Color data pushed to Firebase
+ Optional Task
+The app is connected to Firebase and the color data is stored in Cloud Firestore along with local storage. 
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
